@@ -112,14 +112,9 @@ int execute(char *const command[], char **envp)
 				free(command[i]);
 			exit(EXIT_FAILURE);
 		}
-		if (errno == -1)
-		{
-			free(*command);
-			exit(2);
-		}
 		wait(&status);
 		free(fullpath);
 	} else
 		printerror(command);
-	return (0);
+	exit(2);
 }
