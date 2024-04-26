@@ -107,11 +107,7 @@ int execute(char *const command[], char **envp)
 		{
 			if (_getenv("PATH", envp) == NULL && access(command[0], F_OK) != 0)
 				printerror(command);
-			if (execve(temp[0], command, envp) == -1)
-			{
-				free(*command);
-				exit(2);
-			}
+			execve(temp[0], command, envp);
 			for (i = 0; command[i] != NULL; i++)
 				free(command[i]);
 			exit(EXIT_FAILURE);
@@ -120,5 +116,10 @@ int execute(char *const command[], char **envp)
 		free(fullpath);
 	} else
 		printerror(command);
+	if (WIFEXITED(status) != true)
+	{
+		free(*command);
+		exit(2);
+	}
 	return (0);
 }
