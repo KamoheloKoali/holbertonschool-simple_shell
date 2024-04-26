@@ -60,9 +60,9 @@ Run the program
 - [@Kamohelo Koali](https://github.com/KamoheloKoali)
 - [@Langa Hoohlo](https://github.com/Langahoohlo)
 - [@Lebohang Mabataung Moletsane](https://github.com/Lebohang1983)
-- [Pheello Ntlele](https://github.com/Ntlele)
-- [Khiba Koenane](https://github.com/khiba-k)
-- [Mthawelanga Matross](https://github.com/Matross-20)
+- [@Pheello Ntlele](https://github.com/Ntlele)
+- [@Khiba Koenane](https://github.com/khiba-k)
+- [@Mthawelanga Matross](https://github.com/Matross-20)
 
 
 
