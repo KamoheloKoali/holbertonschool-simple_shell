@@ -28,7 +28,7 @@ $ exit
 
 ## Installation
 
-Install my-project with npm
+Install holbertonschool-simple_shell with git clone
 
 ```bash
 git clone https://github.com/Langahoohlo/holbertonschool-simple_shell.git
