@@ -11,7 +11,7 @@ void printerror(char *const command[])
 {
 	fprintf(stderr, "./hsh: 1: %s: not found\n", command[0]);
 	free(*command);
-	exit(2);
+	exit(127);
 }
 
 /**
@@ -111,6 +111,11 @@ int execute(char *const command[], char **envp)
 			for (i = 0; command[i] != NULL; i++)
 				free(command[i]);
 			exit(EXIT_FAILURE);
+		}
+		if (errno == -1)
+		{
+			free(*command);
+			exit(2);
 		}
 		wait(&status);
 		free(fullpath);
