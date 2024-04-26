@@ -107,7 +107,11 @@ int execute(char *const command[], char **envp)
 		{
 			if (_getenv("PATH", envp) == NULL && access(command[0], F_OK) != 0)
 				printerror(command);
-			execve(temp[0], command, envp);
+			if (execve(temp[0], command, envp) == -1)
+			{
+				free(*command);
+				exit(2);
+			}
 			for (i = 0; command[i] != NULL; i++)
 				free(command[i]);
 			exit(EXIT_FAILURE);
@@ -116,5 +120,5 @@ int execute(char *const command[], char **envp)
 		free(fullpath);
 	} else
 		printerror(command);
-	exit(2);
+	return (0);
 }
