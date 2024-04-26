@@ -10,7 +10,6 @@
 #include <errno.h>
 #include <sys/types.h>
 #include <sys/wait.h>
-#include <stdbool.h>
 
 int execute(char *const command[], char **envp);
 void input(char **command, size_t *size);
